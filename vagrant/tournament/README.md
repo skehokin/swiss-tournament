@@ -51,8 +51,11 @@ Once all match results for the round have been entered, the next set of pairings
 The number of rounds required in a swiss tournament is determined by log<sub>2</sub>(players/2) where players here is rounded up to a power of 2, so:
 
 4 players: 2 rounds
+
 8 players: 3 rounds
+
 16 players: 4 rounds
+
 32 players: 5 rounds
 
 and so on.
