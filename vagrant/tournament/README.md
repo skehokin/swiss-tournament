@@ -7,8 +7,8 @@ This project employs SQL and Python 2.7 to create and manage a database for runn
 ### Setting up The Database:
 
 #### Step 1:
- In order to run this (program?), a virtual machine is required, and psql must be installed. The recommended way to do this is to install VirtualBox amd Vagrant.
-VirtualBox can be downloaded [here](https://www.virtualbox.org/wiki/Downloads), and Vagrant from [here](https://www.vagrantup.com/downloads.html) chosing the correct version for your operating system. It is not yet necessary to initialise Vagrant in any particular directory.
+ In order to run use this code, a virtual machine is required, and psql (PostgreSQL) must be installed. The recommended way to do this is to install VirtualBox amd Vagrant.
+VirtualBox can be downloaded [here](https://www.virtualbox.org/wiki/Downloads), and Vagrant from [here](https://www.vagrantup.com/downloads.html) choosing the correct version for your operating system. It is not yet necessary to initialise Vagrant in any particular directory.
 
 #### Step 2:
 Secondly you must clone this repository to your own computer using git.
@@ -18,16 +18,16 @@ Thirdly, navigate to the directory containing the clone in your command line and
 ```cd <your/entire/file/pathway/vagrant>```
 
 #### Step 4:
-initialise vagrant by typing `vagrant up`. This starts up vagrant, but the first time it is run in a particular directory, it will also create the virtual machine.
+Initialise vagrant by typing `vagrant up`. This starts up vagrant, but the first time it is run in a particular directory, it will also create the virtual machine. A file is included so that vagrant is configured properly.
 
 #### Step 5:
-After the extended process of downloading an entire Linux operating system, if you are in Windows, you will need to change to using a Linux Bash shell, not the inbuilt Command Prompt. Happily you already have one installed in the guise of Git Bash. Open your Bash shell, navigate again into the cloned repository (again using `cd <your/entire/file/pathway/vagrant>`>), and enter into the virtual machine via `vagrant ssh`.
+After the extended process of downloading an entire Linux operating system, if you are using Windows you will need to change to using a Linux Bash shell rather than the inbuilt Command Prompt. Happily you already have one installed in the guise of Git Bash. Open your Bash shell, navigate again into the cloned repository (again using `cd <your/entire/file/pathway/vagrant>`>), and enter into the virtual machine via `vagrant ssh`.
 
 #### Step 6:
 Ensure that you are in `/vagrant/tournament`, and start PostgreSQL by typing `psql`
 
 #### Step 7:
-Make a new database called tournament (not anything else, or the functions writen here will not work) by typing `CREATE DATABASE tournament;`, then enter into it by typing `\c tournament`
+Make a new database called tournament (not anything else, or the functions written here will not work) by typing `CREATE DATABASE tournament;`, then enter into it by typing `\c tournament`
 
 #### Step 8:
 import tournament.sql via `\i tournament.sql` this will set up your database tables and views so they can be used by the given functions.
