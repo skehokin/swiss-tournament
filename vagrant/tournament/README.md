@@ -48,7 +48,7 @@ The result of each game can be entered into the database by running reportMatch(
 
 Once all match results for the round have been entered, the next set of pairings can be determined by running `swissPairings()` again.
 
-The number of rounds required in a swiss tournament is determined by log<sub>2</sub>(players/2) where players here is rounded up to a power of 2, so:
+The number of rounds required in a swiss tournament is determined by log<sub>2</sub>(players) where players here is the number of players rounded up to a power of 2, so:
 
 4 players: 2 rounds
 
