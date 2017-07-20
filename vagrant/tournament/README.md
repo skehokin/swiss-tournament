@@ -21,28 +21,28 @@ Thirdly, navigate to the directory containing the clone in your command line and
 Initialise vagrant by typing `vagrant up`. This starts up vagrant, but the first time it is run in a particular directory, it will also create the virtual machine. A file is included so that vagrant is configured properly.
 
 #### Step 5:
-After the extended process of downloading an entire Linux operating system, if you are using Windows you will need to change to using a Linux Bash shell rather than the inbuilt Command Prompt. Happily you already have one installed in the guise of Git Bash. Open your Bash shell, navigate again into the cloned repository (again using `cd <your/entire/file/pathway/vagrant>`>), and enter into the virtual machine via `vagrant ssh`.
+After the extended process of downloading an entire Linux operating system, if you are using Windows you will need to change to using a Linux Bash shell rather than the inbuilt Command Prompt. Happily you already have one installed in the guise of Git Bash. Open your Bash shell, navigate again into the cloned repository (again using `cd <your/entire/file/pathway/vagrant>`), and enter into the virtual machine via `vagrant ssh`.
 
 #### Step 6:
 Ensure that you are in `/vagrant/tournament`, and start PostgreSQL by typing `psql`
 
 #### Step 7:
-Make a new database called tournament (not anything else, or the functions written here will not work) by typing `CREATE DATABASE tournament;`, then enter into it by typing `\c tournament`
+Make a new database called tournament (not anything else, or the functions written here will not work) by typing `CREATE DATABASE tournament;`, then enter into it by typing `\c tournament`.
 
 #### Step 8:
-import tournament.sql via `\i tournament.sql` this will set up your database tables and views so they can be used by the given functions.
+import tournament.sql via `\i tournament.sql`. This will set up your database tables and views so they can be used by the given functions.
 
 ### Using the functions to run a Swiss Tournament:
 
 All functions are contained within the tournament.py file. Recommended use is through importing that file into a Python 2.7 document, either via `from tournament import *`, or simply `import tournament` if you wish to preserve similar names for future use within your program.
 
-For the initial tournament, it won't be necessary to run deleteMatches() or deletePlayers() but because the database is set up to do only one tournament at a time, you'll want to run them as the first step for any subsequent tournament.
+For the initial tournament, it won't be necessary to run `deleteMatches()` or `deletePlayers()` but because the database is set up to manage only one tournament at a time, you'll need to run them as the first step for any subsequent tournament.
 
-Next step will be entering each of the contestants into the database. To do so, simply run `registerPlayer("Full Name")` for each player. This database only supports an even number of players, so ensure that this is the case before continuing.
+Next step will be entering each of the contestants into the database. To do so, simply run `registerPlayer('Full Name')` for each player. This database only supports an even number of players, so ensure that this is the case before continuing.
 
 Once all players have been entered, running `swissPairings()` for the first time will give you your sets of pairings for the initial round.
 
-Each game can be entered into the database by running reportMatch(winner_ID, loser_ID). Your original `swissPairings()` result contains the IDs, or you can also obtain each player ID from the database by typing into psql:
+The result of each game can be entered into the database by running reportMatch(winner_ID, loser_ID). Your original `swissPairings()` result contains the IDs, or you can also obtain each player ID from the database by typing into psql:
 
 ```SELECT id FROM players WHERE name='player's name';```
 
